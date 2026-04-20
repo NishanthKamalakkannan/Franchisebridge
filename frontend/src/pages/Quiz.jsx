@@ -157,7 +157,7 @@ export default function Quiz() {
                 style={{
                   padding: '24px',
                   border: `2px solid ${isSelected(opt.v) ? 'var(--primary)' : 'var(--border)'}`,
-                  background: isSelected(opt.v) ? '#F1F5F9' : 'white',
+                  background: isSelected(opt.v) ? '#F0FDF4' : 'white',
                   borderRadius: '16px',
                   cursor: 'pointer', textAlign: 'left',
                   transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)', 
@@ -165,7 +165,7 @@ export default function Quiz() {
                   flexDirection: current.multi ? 'column' : 'row',
                   alignItems: current.multi ? 'flex-start' : 'center',
                   gap: 16,
-                  boxShadow: isSelected(opt.v) ? '0 8px 20px rgba(0, 71, 171, 0.08)' : 'var(--shadow)'
+                  boxShadow: isSelected(opt.v) ? '0 8px 20px rgba(5, 150, 105, 0.08)' : 'var(--shadow)'
                 }}
                 onMouseOver={e => { if (!isSelected(opt.v)) { e.currentTarget.style.borderColor = '#CBD5E1'; e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = 'var(--shadow-lg)'; } }}
                 onMouseOut={e => { if (!isSelected(opt.v)) { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'var(--shadow)'; } }}

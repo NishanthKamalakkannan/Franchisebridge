@@ -35,12 +35,13 @@ export default function Auth() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', background: '#F8F9FA' }}>
       {/* Left panel */}
-      <div style={{ flex: 1, background: '#0033A0', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '60px 50px', minWidth: 0 }} className="auth-left">
-        <Buildings size={36} color="white" weight="fill" style={{ marginBottom: 24 }} />
-        <h1 style={{ fontSize: 'clamp(28px, 3vw, 44px)', fontWeight: 900, color: 'white', lineHeight: 1.1, letterSpacing: '-1.5px', marginBottom: 16 }}>
+      <div style={{ flex: 1, background: 'var(--primary)', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '60px 50px', minWidth: 0, position: 'relative', overflow: 'hidden' }} className="auth-left">
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 40%)' }} />
+        <Storefront size={36} color="white" weight="fill" style={{ marginBottom: 24, position: 'relative' }} />
+        <h1 style={{ fontSize: 'clamp(28px, 3vw, 44px)', fontWeight: 900, color: 'white', lineHeight: 1.1, letterSpacing: '-1.5px', marginBottom: 16, position: 'relative' }}>
           Chennai's Smartest Franchise Platform
         </h1>
-        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, marginBottom: 40 }}>
+        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, marginBottom: 40, position: 'relative' }}>
           AI-powered matching, viability scoring, and zone intelligence — all in one platform.
         </p>
         {[
@@ -49,8 +50,8 @@ export default function Auth() {
           'Chennai zone demand intelligence',
           'Plain-language franchise explainer chat',
         ].map(f => (
-          <div key={f} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-            <div style={{ width: 6, height: 6, background: '#60A5FA', flexShrink: 0 }} />
+          <div key={f} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12, position: 'relative' }}>
+            <div style={{ width: 6, height: 6, background: '#34D399', flexShrink: 0 }} />
             <span style={{ fontSize: 14, color: 'rgba(255,255,255,0.8)' }}>{f}</span>
           </div>
         ))}
