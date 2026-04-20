@@ -90,17 +90,17 @@ export default function Recommendations() {
       <div className="container" style={{ padding: '32px 24px' }}>
         {/* Compare bar */}
         {compareList.length > 0 && (
-          <div style={{ background: '#0033A0', padding: '14px 20px', marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
+          <div style={{ background: 'var(--primary)', padding: '14px 20px', marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12, borderRadius: '12px', boxShadow: '0 4px 12px rgba(5, 150, 105, 0.2)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
               <span style={{ color: 'white', fontWeight: 700, fontSize: 14 }}>Comparing {compareList.length}/3:</span>
               {compareList.map(f => (
-                <span key={f.franchise_id} style={{ background: 'rgba(255,255,255,0.2)', color: 'white', padding: '4px 10px', fontSize: 13 }}>{f.name}</span>
+                <span key={f.franchise_id} style={{ background: 'rgba(255,255,255,0.2)', color: 'white', padding: '4px 10px', fontSize: 13, borderRadius: '6px' }}>{f.name}</span>
               ))}
             </div>
             <button
               data-testid="go-compare"
               onClick={() => navigate('/compare', { state: { franchises: compareList } })}
-              style={{ background: 'white', color: '#0033A0', border: 'none', padding: '10px 20px', fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>
+              style={{ background: 'white', color: 'var(--primary)', border: 'none', padding: '10px 20px', fontWeight: 700, fontSize: 13, cursor: 'pointer', borderRadius: '8px' }}>
               Compare Now →
             </button>
           </div>
@@ -122,10 +122,11 @@ export default function Recommendations() {
             ].map(s => (
               <button key={s.v} data-testid={`sort-${s.v}`} onClick={() => setSortBy(s.v)} style={{
                 padding: '6px 12px', fontSize: 12, fontWeight: 600,
-                background: sortBy === s.v ? '#0033A0' : 'white',
+                background: sortBy === s.v ? 'var(--primary)' : 'white',
                 color: sortBy === s.v ? 'white' : '#475569',
-                border: `1px solid ${sortBy === s.v ? '#0033A0' : '#E2E8F0'}`,
-                cursor: 'pointer', transition: 'all 0.15s'
+                border: `1px solid ${sortBy === s.v ? 'var(--primary)' : '#E2E8F0'}`,
+                cursor: 'pointer', transition: 'all 0.15s',
+                borderRadius: '6px'
               }}>{s.l}</button>
             ))}
           </div>
@@ -134,7 +135,7 @@ export default function Recommendations() {
         {/* Loading */}
         {loading && (
           <div style={{ textAlign: 'center', padding: '80px 0' }}>
-            <div style={{ width: 60, height: 60, border: '4px solid #E2E8F0', borderTopColor: '#0033A0', borderRadius: '50%', animation: 'spin 0.8s linear infinite', margin: '0 auto 24px' }} />
+            <div style={{ width: 60, height: 60, border: '4px solid #F1F5F9', borderTopColor: 'var(--primary)', borderRadius: '50%', animation: 'spin 0.8s linear infinite', margin: '0 auto 24px' }} />
             <h3 style={{ fontSize: 18, fontWeight: 700, color: '#0F172A', marginBottom: 8 }}>Groq AI is analyzing {(quizAnswers?.categories || []).join(', ')} franchises...</h3>
             <p style={{ color: '#475569', fontSize: 14 }}>Scoring each franchise against your profile. This takes 5–10 seconds.</p>
           </div>

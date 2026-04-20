@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
-import { ArrowRight, Buildings, Brain, ChartBar, MapPin, Star, Lightning, Users, ShieldCheck } from '@phosphor-icons/react';
+import { ArrowRight, Storefront, Brain, ChartBar, MapPin, Star, Lightning, Users, ShieldCheck } from '@phosphor-icons/react';
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -45,7 +45,7 @@ export default function Landing() {
         display: 'flex', 
         alignItems: 'center', 
         overflow: 'hidden',
-        background: 'radial-gradient(circle at top right, #EEF2FF 0%, #FFFFFF 50%)'
+        background: 'radial-gradient(circle at top right, #ECFDF5 0%, #FFFFFF 50%)'
       }}>
         {/* Decorative elements */}
         <div style={{ 
@@ -58,11 +58,11 @@ export default function Landing() {
             <div className="animate-fade-up">
               <div style={{ 
                 display: 'inline-flex', alignItems: 'center', gap: 10, 
-                background: '#F1F5F9', border: '1px solid #E2E8F0', 
+                background: '#F0FDF4', border: '1px solid #DCFCE7', 
                 padding: '8px 16px', borderRadius: '100px', marginBottom: 32 
               }}>
                 <Lightning size={16} color="var(--primary)" weight="fill" />
-                <span style={{ fontSize: 13, fontWeight: 700, color: '#475569', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                <span style={{ fontSize: 13, fontWeight: 700, color: '#15803D', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                   Chennai's Premier AI Advisor · {stats.total}+ Opportunities
                 </span>
               </div>
@@ -106,7 +106,7 @@ export default function Landing() {
             <div className="animate-fade-in" style={{ position: 'relative' }}>
               <div style={{ 
                 position: 'relative', borderRadius: '32px', overflow: 'hidden', 
-                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
+                boxShadow: '0 25px 50px -12px rgba(5, 150, 105, 0.15)',
                 border: '8px solid white'
               }}>
                 <img src={HERO_IMAGE} alt="Professional Office" style={{ width: '100%', display: 'block' }} />
@@ -154,7 +154,7 @@ export default function Landing() {
             {STEPS.map((s, i) => (
               <div key={i} className="card" style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                 <div style={{ 
-                  width: 56, height: 56, background: '#EFF6FF', borderRadius: '16px',
+                  width: 56, height: 56, background: '#ECFDF5', borderRadius: '16px',
                   display: 'flex', alignItems: 'center', justifyContent: 'center'
                 }}>
                   {s.icon}
@@ -232,7 +232,7 @@ export default function Landing() {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
                 <div style={{ width: 44, height: 44, background: 'var(--primary)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Buildings size={24} color="white" weight="fill" />
+                  <Storefront size={24} color="white" weight="fill" />
                 </div>
                 <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, color: 'white', fontSize: 24, letterSpacing: '-1px' }}>Franchisebridge</span>
               </div>
